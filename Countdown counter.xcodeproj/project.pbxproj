@@ -21,6 +21,7 @@
 		2D2782D2264D640000BF36DB /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2782D1264D640000BF36DB /* EventTableViewCell.swift */; };
 		2D2782D4264D6C5300BF36DB /* EventTagPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2782D3264D6C5300BF36DB /* EventTagPickerViewController.swift */; };
 		2D2782D6264D717C00BF36DB /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2782D5264D717C00BF36DB /* EventTag.swift */; };
+		2DD5B3B72650088D002B835D /* LocalNotificationMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B3B62650088D002B835D /* LocalNotificationMenager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2D2782D1264D640000BF36DB /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		2D2782D3264D6C5300BF36DB /* EventTagPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTagPickerViewController.swift; sourceTree = "<group>"; };
 		2D2782D5264D717C00BF36DB /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
+		2DD5B3B62650088D002B835D /* LocalNotificationMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationMenager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				2D2782CD264C2DBB00BF36DB /* AddEventViewController.swift */,
 				2D2782D5264D717C00BF36DB /* EventTag.swift */,
 				2D2782D3264D6C5300BF36DB /* EventTagPickerViewController.swift */,
+				2DD5B3B62650088D002B835D /* LocalNotificationMenager.swift */,
 				2D2782A4264C1D1C00BF36DB /* Assets.xcassets */,
 				2D2782A6264C1D1C00BF36DB /* LaunchScreen.storyboard */,
 				2D2782A9264C1D1C00BF36DB /* Info.plist */,
@@ -282,6 +285,7 @@
 				2D2782CC264C279E00BF36DB /* Event.swift in Sources */,
 				2D2782CE264C2DBB00BF36DB /* AddEventViewController.swift in Sources */,
 				2D2782A0264C1D1A00BF36DB /* ViewController.swift in Sources */,
+				2DD5B3B72650088D002B835D /* LocalNotificationMenager.swift in Sources */,
 				2D2782D2264D640000BF36DB /* EventTableViewCell.swift in Sources */,
 				2D27829C264C1D1A00BF36DB /* AppDelegate.swift in Sources */,
 				2D27829E264C1D1A00BF36DB /* SceneDelegate.swift in Sources */,

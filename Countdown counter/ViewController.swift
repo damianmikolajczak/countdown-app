@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         vc.completitionHandler = { name, date, tag, description in
             let newEvent = Event(name: name, date: date, tag: tag, description: description)
+            LocalNotificationManager.createNotification(for: newEvent)
             self.eventsData.append(newEvent)
         }
         present(vc, animated: true, completion: nil)
@@ -28,11 +29,10 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        eventsData.append(Event(name: "Próba", date: Date(), tag: EventTag(tag: .oneHour), description: nil))
         
         events[0].removeAll()
         events[1].removeAll()
+        
         for event in eventsData {
             if event.expired {
                 events[1].append(event)

@@ -35,6 +35,7 @@ class EventDetailViewController: UIViewController {
             self.event?.tag = tag
             self.event?.description = description
             
+            LocalNotificationManager.createNotification(for: self.event!)
         }
         present(vc, animated: true, completion: nil)
     }

@@ -8,7 +8,22 @@
 import Foundation
 import UIKit
 
-struct EventTag {
+struct EventTag:CustomStringConvertible {
+    var description: String {
+        switch tag {
+        case .oneWeek:
+            return "one week"
+        case .oneDay:
+            return "one day"
+        case .oneHour:
+            return "one hour"
+        case .thirtyMinutes:
+            return "thirty minutes"
+        case .fiveMinutes:
+            return "five minutes"
+        }
+    }
+    
     enum TagName {
         case oneWeek
         case oneDay
