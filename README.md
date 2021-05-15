@@ -1,0 +1,2 @@
+# countdown-app
+This is an app that allows users to write down their events and show how many time lefts to them. By choosing a specified tag (individual to each event) the user can choose when he want to receive a push notification (for example one hour or one day before the events date). The user can add new events to the list and see all of the expired events too. I've added also a little bit of customization and the user can optionally add a description to each event.
