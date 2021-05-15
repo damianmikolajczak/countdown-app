@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 import UserNotifications
 
-
 struct LocalNotificationManager {
-    
     static func createNotification(for event: Event) {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .alert], completionHandler: { granted, error in
@@ -24,7 +22,7 @@ struct LocalNotificationManager {
         content.title = "Something is near the corner."
         content.body = "You have an upcoming event called \(event.name) in \(event.tag)!"
         
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: event.date)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: event.notificationDate)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
