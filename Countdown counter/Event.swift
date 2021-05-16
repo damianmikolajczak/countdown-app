@@ -11,7 +11,8 @@ class Event {
     var name: String
     var date: Date
     var tag: EventTag
-    var description: String?
+    var desc: String?
+    
     var expired: Bool {
         return date.timeIntervalSinceNow <= 0
     }
@@ -30,10 +31,10 @@ class Event {
         }
     }
     
-    init(name: String, date: Date, tag: EventTag, description: String?) {
+    init(name: String, date: Date, tag: EventTag, desc: String?) {
         self.name = name
         self.date = date
         self.tag = tag
-        self.description = description
+        self.desc = desc
     }
 }

@@ -29,11 +29,11 @@ class EventDetailViewController: UIViewController {
         
         vc.modalPresentationStyle = .fullScreen
         vc.eventToEdit = self.event
-        vc.completitionHandler = { name, date, tag, description in
+        vc.completitionHandler = { name, date, tag, desc in
             self.event?.name = name
             self.event?.date = date
             self.event?.tag = tag
-            self.event?.description = description
+            self.event?.desc = desc
             
             LocalNotificationManager.createNotification(for: self.event!)
         }
@@ -49,7 +49,7 @@ class EventDetailViewController: UIViewController {
         eventName.text = event?.name
         eventDate.text = formater.string(from: event!.date)
         
-        if let description = event?.description {
+        if let description = event?.desc {
             eventDescription.text = description
         }
         eventDescription.isEditable = false
@@ -82,7 +82,7 @@ class EventDetailViewController: UIViewController {
         eventName.text = event?.name
         eventDate.text = formater.string(from: event!.date)
         
-        if let description = event?.description {
+        if let description = event?.desc {
             eventDescription.text = description
         }
         eventDescription.isEditable = false

@@ -9,8 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
     
-
-    let myEvents:[String] = ["Urodziny","Koniec studiów", "Rozpoczęcie pracy", "Obrona pracy magisterskiej"]
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var eventsData = Array<Event>()
     var events = [Array<Event>(), Array<Event>()]
     
@@ -20,7 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate {
         let vc = storyboard?.instantiateViewController(withIdentifier: "EventAddScreen") as! AddEventViewController
         vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         vc.completitionHandler = { name, date, tag, description in
-            let newEvent = Event(name: name, date: date, tag: tag, description: description)
+            //let newEvent = Event(name: name, date: date, tag: tag, desc: description)
+            let newEvent = Event(name: name, date: date, tag: tag, desc: description)
             LocalNotificationManager.createNotification(for: newEvent)
             self.eventsData.append(newEvent)
         }
@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchEvents()
         
         events[0].removeAll()
         events[1].removeAll()
@@ -43,6 +44,10 @@ class ViewController: UIViewController, UITableViewDelegate {
         
         eventsTable.dataSource = self
         eventsTable.delegate = self
+    }
+    
+    func fetchEvents() {
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,5 +108,17 @@ extension ViewController: UITableViewDataSource {
         default:
             return "Something went wrong"
         }
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

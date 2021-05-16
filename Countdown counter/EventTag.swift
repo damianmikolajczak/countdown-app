@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 
-struct EventTag:CustomStringConvertible {
+struct EventTag: CustomStringConvertible {
+    
+    public var tag: TagName
+ 
     var description: String {
         switch tag {
         case .oneWeek:
@@ -32,7 +35,7 @@ struct EventTag:CustomStringConvertible {
         case fiveMinutes
     }
     
-    public var tag: TagName
+    
     
     public var tagColor: UIColor {
         switch tag {
